@@ -1,0 +1,36 @@
+name: blue_print_pos
+description: Plugin to connecting bluetooth printer device, support on Android and iOS
+version: 0.0.11
+homepage: https://github.com/andriyoganp/blue_print_pos
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+  flutter: ">=1.20.0"
+
+dependencies:
+  # Handler bluetooth for Android
+  blue_thermal_printer: ^1.1.8
+  # Utilities for generate ByteBuffer
+  esc_pos_utils_plus: ^2.0.1+6
+  # Framewework
+  flutter:
+    sdk: flutter
+  # Handler bluetooth for iOS
+  flutter_blue: ^0.8.0
+  # Image utilities
+  image: ^3.0.8
+  # Generate qr image painter
+  qr_flutter: ^4.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.ayeee.blue_print_pos
+        pluginClass: BluePrintPosPlugin
+      ios:
+        pluginClass: BluePrintPosPlugin
