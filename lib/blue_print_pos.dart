@@ -134,7 +134,7 @@ class BluePrintPos {
       useCut: useCut,
       useRaster: useRaster,
     );
-    _printProcess(byteBuffer);
+    printProcess(byteBuffer);
   }
 
   /// This method only for print image with parameter [bytes] in List<int>
@@ -157,7 +157,7 @@ class BluePrintPos {
       useRaster: useRaster,
       paperSize: paperSize,
     );
-    _printProcess(byteBuffer);
+    printProcess(byteBuffer);
   }
 
   /// This method only for print QR, only pass value on parameter [data]
@@ -182,7 +182,7 @@ class BluePrintPos {
   /// Reusable method for print text, image or QR based value [byteBuffer]
   /// Handler Android or iOS will use method writeBytes from ByteBuffer
   /// But in iOS more complex handler using service and characteristic
-  Future<void> _printProcess(List<int> byteBuffer) async {
+  Future<void> printProcess(List<int> byteBuffer) async {
     try {
       if (selectedDevice == null) {
         print('$runtimeType - Device not selected');
